@@ -1,0 +1,6 @@
+{
+  "name": "CleanHome - Professional Home Cleaning Service Platform",
+  "description": "Modern home cleaning service platform featuring service discovery, online scheduling, customer booking management, and secure account authentication.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1273 @@
+MASTER PROMPT — CLEANHOME
+
+Professional Home Cleaning Service Platform
+
+1. Role and Project Objective
+
+Act as a Senior Full-Stack Developer, UI/UX Designer, Application Security Engineer, and Database Architect.
+
+Build a complete, professional, responsive, and secure home cleaning service website named CleanHome from scratch.
+
+CleanHome is a home cleaning service platform that introduces the business to visitors, displays cleaning services, allows visitors to register and log in, and provides authenticated customers with a dashboard to explore services and manage their bookings.
+
+IMPORTANT:
+
+Start from a completely new project.
+
+Do not continue, import, or depend on any previous CleanHome project, codebase, or authentication implementation.
+
+Do not assume that existing files, components, database tables, or Supabase configurations exist.
+
+Create all necessary application files, components, configurations, database migrations, security policies, and documentation.
+
+Do not produce only a prototype, static mockup, or UI demonstration.
+
+Implement real interactions and working functionality wherever specified.
+
+Never claim that a feature works unless it has actually been implemented and tested.
+
+The final result must resemble a real home cleaning service business, not a generic student dashboard.
+
+2. Technology Stack
+
+Use the following technology stack:
+
+Frontend: React 19 + TypeScript.
+
+Build Tool: Vite.
+
+Styling: Tailwind CSS v4.
+
+Routing: React Router.
+
+Backend and Database: Supabase.
+
+Authentication: Supabase Auth using @supabase/supabase-js.
+
+Database: Supabase PostgreSQL.
+
+Form Validation: Zod with React Hook Form where appropriate.
+
+Icons: Lucide React.
+
+Animation: Motion for React or a lightweight CSS-based animation solution.
+
+Testing: Vitest and React Testing Library, with Playwright for essential end-to-end flows where practical.
+
+Package Manager: npm.
+
+Use stable, compatible package versions and follow the official documentation for the installed versions.
+
+Do not introduce unnecessary frameworks, heavy UI libraries, or additional backend services without a clear reason.
+
+Use TypeScript strict mode and avoid any unless there is a documented technical justification.
+
+Supabase must be the real authentication and database provider, not a dummy service or hardcoded replacement.
+
+3. Brand Identity and Visual Direction
+
+Create a distinctive and polished visual identity for CleanHome.
+
+Design direction:
+
+Professional home cleaning service business.
+
+Modern Minimalist.
+
+Soft Neumorphism used sparingly.
+
+Organic Green Palette.
+
+Large, high-quality lifestyle photography.
+
+Generous whitespace and clear visual hierarchy.
+
+Rounded cards, subtle borders, and refined shadows.
+
+Smooth hover effects and carefully designed micro-interactions.
+
+Avoid excessive neumorphism, excessive gradients, overly rounded elements, generic AI-generated layouts, and unnecessary decorative effects.
+
+Suggested color palette:
+
+Primary Green: #285A43
+
+Deep Green: #173C32
+
+Soft Sage: #A6C7A5
+
+Warm Cream: #FAF8F1
+
+White: #FFFFFF
+
+Main Text: #24332A
+
+Secondary Text: #68756D
+
+Error: #B42318
+
+Success: #237A4B
+
+Define reusable design tokens for colors, typography, spacing, radii, shadows, and interaction states.
+
+Use a consistent typography system with readable headings, body text, labels, and supporting text.
+
+The design must be cohesive across the landing page, authentication pages, customer dashboard, forms, dialogs, and responsive navigation.
+
+4. Public Landing Page
+
+Create a complete marketing landing page accessible without an account.
+
+The landing page must introduce CleanHome before asking visitors to register or log in.
+
+A. Navbar
+
+Include:
+
+CleanHome logo and brand identity.
+
+Home.
+
+Services.
+
+How It Works.
+
+About Us.
+
+Contact.
+
+Log In button.
+
+Sign Up button with stronger visual emphasis.
+
+Requirements:
+
+Navbar links must navigate to their correct sections or pages.
+
+The navbar must adapt to desktop, tablet, and mobile layouts.
+
+Mobile navigation must open and close correctly.
+
+Provide visible keyboard focus indicators.
+
+Keep navigation simple and accessible.
+
+B. Hero Section
+
+Create a visually impressive hero section with:
+
+A compelling headline, such as “A Cleaner Home, A Better Everyday.”
+
+Supporting copy explaining the value of CleanHome.
+
+A prominent, large cleaning or bright home interior photograph.
+
+A primary CTA: “Explore Services”.
+
+A secondary CTA: “Get Started”.
+
+Optional trust indicators only when they are truthful and supported.
+
+The hero section must communicate the service clearly within a few seconds.
+
+Use optimized images with appropriate aspect ratios, descriptive alternative text, and responsive sizing.
+
+Do not use fake customer counts, fake ratings, fake certifications, or unsupported business claims.
+
+C. Services Section
+
+Display professional service cards, for example:
+
+General Home Cleaning.
+
+Bedroom Cleaning.
+
+Kitchen Cleaning.
+
+Bathroom Cleaning.
+
+Living Room Cleaning.
+
+Deep Cleaning.
+
+Each card should contain:
+
+Relevant image or visual.
+
+Service name.
+
+Short description.
+
+Price only if an actual price has been configured.
+
+A “View Details” or “Book Service” action.
+
+Service information must be obtained from Supabase rather than duplicated as unrelated hardcoded application data.
+
+Create a useful empty state and loading state when services cannot be loaded.
+
+If no services have been configured, explain that services are temporarily unavailable instead of inventing database results.
+
+D. How It Works
+
+Present a clear three-step process:
+
+Choose a cleaning service.
+
+Select a preferred schedule and provide booking details.
+
+Track the booking status through the customer dashboard.
+
+Use simple icons, concise descriptions, and a clean visual layout.
+
+E. Why Choose CleanHome?
+
+Explain practical benefits such as:
+
+Convenient service discovery.
+
+Clear booking information.
+
+Easy booking management.
+
+Responsive customer experience.
+
+Do not claim background-checked staff, insurance, guarantees, or verified cleaners unless those capabilities have actually been implemented.
+
+F. About CleanHome
+
+Include a short introduction explaining the purpose of the platform and its commitment to making home cleaning easier.
+
+Avoid unsupported company history or fabricated business credentials.
+
+G. Final CTA
+
+Add a prominent section encouraging visitors to create an account and explore available cleaning services.
+
+H. Footer
+
+Include:
+
+CleanHome branding.
+
+Navigation links.
+
+Available contact information.
+
+Privacy Policy.
+
+Terms of Service.
+
+Copyright notice.
+
+Do not invent telephone numbers, email addresses, or physical business addresses.
+
+Create the Privacy Policy and Terms of Service pages with appropriate, clearly written initial content that can be reviewed before production use.
+
+5. Authentication System
+
+Implement complete authentication from scratch using Supabase Auth.
+
+A. Registration
+
+Create a professional registration page containing:
+
+Full name.
+
+Email address.
+
+Password.
+
+Password confirmation.
+
+Terms acceptance checkbox, if required by the application's terms.
+
+Requirements:
+
+Validate inputs on the client and server-side trust boundaries where applicable.
+
+Validate password confirmation.
+
+Enforce reasonable password requirements.
+
+Display accessible validation messages.
+
+Prevent repeated submissions while a request is processing.
+
+Use appropriate autocomplete attributes.
+
+Never store plaintext passwords in the application database.
+
+Never log passwords or authentication tokens.
+
+Use Supabase Auth for account creation.
+
+If email confirmation is enabled in Supabase, handle the confirmation flow correctly and inform the user that verification is required.
+
+Do not assume registration automatically establishes a usable authenticated session when email confirmation is required.
+
+B. Login
+
+Create a login page with:
+
+Email.
+
+Password.
+
+Show/hide password control.
+
+Forgot password link.
+
+Login button.
+
+Link to registration.
+
+Requirements:
+
+Authenticate against Supabase Auth.
+
+Display clear but non-sensitive error messages.
+
+Prevent duplicate submissions.
+
+Preserve a professional loading state.
+
+Redirect authenticated customers to the dashboard.
+
+Never display raw Supabase errors, database errors, or stack traces.
+
+C. Password Reset
+
+Implement a working password reset flow using Supabase Auth.
+
+Include:
+
+Request password reset.
+
+Appropriate neutral confirmation messaging.
+
+Password update page.
+
+Expired or invalid recovery-link handling.
+
+Never disclose whether a particular email address is registered through distinguishable password-reset responses.
+
+D. Session Management
+
+Persist authentication through the supported Supabase client session mechanism.
+
+React to authentication state changes.
+
+Protect authenticated routes.
+
+Redirect unauthenticated visitors to login when accessing protected pages.
+
+Redirect already authenticated users away from unnecessary login or registration screens.
+
+Implement logout correctly.
+
+Clear application-specific sensitive state when logging out.
+
+Do not store passwords, service-role keys, or long-lived privileged credentials in browser storage.
+
+Do not implement custom authentication by comparing plaintext passwords in PostgreSQL.
+
+6. Post-Login Customer Dashboard
+
+After a customer successfully authenticates, redirect them to /dashboard.
+
+Create a useful customer dashboard rather than returning them to the public landing page.
+
+A. Dashboard Layout
+
+Include:
+
+CleanHome logo.
+
+Sidebar navigation on desktop.
+
+Responsive navigation on mobile.
+
+Customer name or safe profile display.
+
+Account menu.
+
+Logout action.
+
+Navigation:
+
+Dashboard.
+
+Browse Services.
+
+My Bookings.
+
+My Profile.
+
+B. Welcome Section
+
+Display a personalized greeting using the authenticated customer's profile information when available.
+
+Example:
+
+“Welcome back! Ready to enjoy a cleaner home?”
+
+If the profile is incomplete or unavailable, display a safe fallback rather than exposing internal errors.
+
+C. Dashboard Overview
+
+Show relevant information:
+
+Available services.
+
+Total bookings belonging to the authenticated customer.
+
+Pending bookings.
+
+Completed bookings.
+
+These values must be calculated from authorized database records.
+
+Do not fabricate booking counts or present placeholder data as actual user activity.
+
+D. Recommended Services
+
+Display a selection of active services from Supabase.
+
+Each card should support viewing details and starting the booking flow.
+
+E. Recent Bookings
+
+Display the authenticated customer's recent bookings with:
+
+Service name.
+
+Booking date and time.
+
+Booking status.
+
+Relevant booking details.
+
+Action to view booking details.
+
+Use explicit empty states for new customers with no bookings.
+
+F. Profile Page
+
+Allow customers to:
+
+View their account information.
+
+Update their display name.
+
+Update their phone number and service address if these fields are supported.
+
+Save profile changes.
+
+Receive validation feedback.
+
+Only expose fields intended for the customer.
+
+Email address changes, if implemented, must follow Supabase Auth's supported verification process.
+
+7. Services and Booking Functionality
+
+Implement a practical service discovery and booking flow.
+
+A. Service Listing
+
+Fetch active services from Supabase.
+
+Provide:
+
+Service cards.
+
+Service details.
+
+Loading states.
+
+Empty states.
+
+Error states.
+
+Optional search or category filtering if it improves usability.
+
+B. Booking Form
+
+When a customer selects a service, open a booking page or form containing:
+
+Selected service.
+
+Preferred date.
+
+Preferred time.
+
+Service address.
+
+Additional notes, optional.
+
+Booking summary.
+
+Submission button.
+
+Validate dates, required fields, text lengths, and allowed input values.
+
+Reject invalid or past appointment dates on the trusted side of the application, not only through client-side validation.
+
+Do not accept arbitrary client-submitted prices as authoritative. Booking prices must be derived from trusted service records.
+
+C. Booking Status
+
+Define a controlled status lifecycle, for example:
+
+pending
+
+confirmed
+
+in_progress
+
+completed
+
+cancelled
+
+Display clear human-readable status labels in the UI.
+
+Only implement transitions that the current business workflow supports.
+
+Customers must not be able to mark their own bookings as confirmed or completed.
+
+Booking cancellation must follow a defined policy and must not permit arbitrary changes to protected booking fields.
+
+D. Booking History
+
+Customers must only be able to access bookings they are authorized to see.
+
+Provide useful filtering and detail views when appropriate.
+
+Prevent duplicate submissions and handle network failures without accidentally creating multiple bookings.
+
+Do not implement payment processing unless explicitly requested in a later phase.
+
+8. Supabase Database Architecture
+
+Create the database schema from scratch.
+
+Provide version-controlled SQL migration files inside a supabase/migrations/ directory.
+
+At minimum, design the following tables:
+
+A. profiles
+
+Suggested fields:
+
+id: UUID primary key referencing auth.users.id.
+
+full_name.
+
+phone.
+
+address, if needed.
+
+created_at.
+
+updated_at.
+
+A profile must belong to the corresponding authenticated user.
+
+B. services
+
+Suggested fields:
+
+id: UUID primary key.
+
+name.
+
+slug, unique.
+
+description.
+
+price, using an appropriate numeric type.
+
+image_url.
+
+category.
+
+is_active.
+
+created_at.
+
+updated_at.
+
+Use appropriate constraints and indexes.
+
+C. bookings
+
+Suggested fields:
+
+id: UUID primary key.
+
+user_id: UUID referencing the authenticated user.
+
+service_id: UUID referencing the selected service.
+
+scheduled_at: timestamp with time zone.
+
+service_address.
+
+notes.
+
+status.
+
+created_at.
+
+updated_at.
+
+Use appropriate foreign keys, indexes, and constraints.
+
+If booking prices must be preserved historically, implement a trusted price snapshot rather than relying on the current service price for every historical booking.
+
+Do not expose unnecessary internal fields in public queries.
+
+D. Database Security
+
+Enable Row Level Security on every table containing application data accessible through the Supabase API.
+
+Implement least-privilege policies.
+
+Examples:
+
+Public visitors can read only active service fields intended for public display.
+
+Authenticated users can read and update only their own permitted profile fields.
+
+Authenticated customers can read only their own bookings.
+
+Customers can create bookings only for their own authenticated user ID.
+
+Customers cannot assign privileged booking statuses.
+
+Customers cannot change protected booking ownership fields.
+
+Only explicitly authorized administrative processes can create or modify services and perform privileged booking transitions.
+
+Do not rely on frontend route guards as a replacement for database authorization.
+
+Use database constraints and trusted server-side logic where necessary to protect invariants that RLS alone cannot safely enforce.
+
+Never create an unrestricted policy such as USING (true) for private profiles or customer bookings.
+
+Avoid overly permissive WITH CHECK (true) policies.
+
+If privileged service management is not part of this phase, do not introduce a public administrator account or hardcoded admin credentials.
+
+E. Profile Creation
+
+If using a database trigger to create profiles after registration:
+
+Use a carefully scoped SECURITY DEFINER function only if necessary.
+
+Set a safe and explicit search_path.
+
+Qualify database object references.
+
+Restrict function execution privileges.
+
+Validate data appropriately.
+
+Ensure malformed user metadata cannot create unauthorized privileges.
+
+Never derive administrator privileges from user-editable registration metadata.
+
+F. Seed Data
+
+Provide optional SQL seed data for realistic cleaning services.
+
+Mark seed data clearly as demonstration data.
+
+Do not insert fake customer reviews, fake bookings belonging to real users, or fabricated business statistics.
+
+9. Critical Security Requirement: Information Disclosure Prevention
+
+Information disclosure prevention is a mandatory security requirement throughout the application.
+
+Implement protections against accidental or unauthorized disclosure of personal data, credentials, application internals, database records, and operational details.
+
+A. Environment Variables and Secrets
+
+Use .env.local or another appropriate ignored local environment file.
+
+Provide a .env.example containing placeholders such as:
+
+VITE_SUPABASE_URL=your_supabase_project_url
+
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+
+Requirements:
+
+Never commit real credentials.
+
+Never expose a Supabase service-role key or secret key to frontend code.
+
+Never use privileged server credentials in VITE_ variables.
+
+Ensure .env* files containing real secrets are ignored by Git.
+
+Explain the difference between publishable client keys and privileged server credentials in the README.
+
+A Supabase publishable key is not a secret. Its safe use depends on correct authentication, authorization, and database policies.
+
+B. Database and API Disclosure
+
+Enable and test RLS for private data.
+
+Prevent users from querying another customer's profile, booking history, address, or personal notes.
+
+Avoid returning unnecessary database columns.
+
+Do not expose internal database errors or SQL details.
+
+Do not rely on unpredictable UUIDs as an authorization mechanism.
+
+Avoid exposing administrative information through public endpoints or client bundles.
+
+Ensure user-controlled filters and URL parameters cannot bypass authorization.
+
+Do not expose raw access tokens or refresh tokens in application logs, URLs, or error reports.
+
+C. Error Handling
+
+Create centralized, safe error handling.
+
+The UI must never expose:
+
+Stack traces.
+
+SQL queries.
+
+Database schema details.
+
+Environment variables.
+
+Authentication tokens.
+
+Secret keys.
+
+Internal filesystem paths.
+
+Raw infrastructure error responses.
+
+Use clear messages such as:
+
+“We couldn't load the services. Please try again.”
+
+“Your request could not be completed.”
+
+“You do not have permission to access this resource.”
+
+Detailed diagnostic information may be recorded in controlled development logs, but never log passwords, tokens, sensitive request bodies, or personal booking notes.
+
+Production error messages must remain generic and actionable.
+
+D. Authentication and Authorization
+
+Use Supabase Auth.
+
+Verify authorization at the database or trusted server boundary.
+
+Prevent unauthorized access by directly entering protected URLs.
+
+Prevent horizontal privilege escalation between customers.
+
+Do not trust user IDs supplied by the browser.
+
+Use the authenticated identity for ownership checks.
+
+Do not treat hidden buttons or disabled UI elements as security controls.
+
+E. Input Validation and Injection Prevention
+
+Validate user input using explicit schemas.
+
+Use safe parameterized database operations.
+
+Never concatenate user-controlled input into raw SQL.
+
+Render user-submitted notes as text rather than executable HTML.
+
+Avoid unsafe HTML injection.
+
+Validate uploaded or external URLs if those capabilities are introduced.
+
+Enforce sensible input length limits.
+
+F. Browser and Application Hardening
+
+Implement appropriate protections, including:
+
+A restrictive Content Security Policy where compatible with the deployment architecture.
+
+Appropriate security headers through deployment configuration.
+
+HTTPS in production.
+
+Safe redirect handling.
+
+Secure external-link attributes when opening untrusted external destinations.
+
+Rate limiting or abuse controls where supported by the architecture and hosting platform.
+
+Appropriate session expiration and recovery handling.
+
+Do not claim that security headers, rate limiting, or other protections are active until the relevant configuration has been implemented and verified.
+
+Do not introduce insecure custom token storage or unnecessary authentication cookies.
+
+G. Security Testing
+
+Test at minimum:
+
+Anonymous visitors cannot access protected customer pages or private records.
+
+Customer A cannot read Customer B's bookings.
+
+Customer A cannot modify Customer B's profile.
+
+Customers cannot change their own role or booking ownership.
+
+Customers cannot assign themselves privileged booking statuses.
+
+Malformed input is rejected safely.
+
+Failed authentication does not expose internal error details.
+
+Sensitive values are absent from committed files and production frontend bundles.
+
+Logout prevents continued access to protected application content.
+
+Document any security limitations that remain.
+
+10. Responsive Design and Accessibility
+
+The website must work well on:
+
+Mobile phones starting at approximately 320px viewport width.
+
+Tablets.
+
+Laptop screens.
+
+Large desktop displays.
+
+Requirements:
+
+No unintended horizontal overflow.
+
+Responsive navigation.
+
+Appropriately sized buttons and form fields.
+
+Responsive images and service cards.
+
+Touch-friendly interactions.
+
+Readable typography at different viewport sizes.
+
+Semantic HTML.
+
+Proper form labels.
+
+Keyboard-accessible navigation and dialogs.
+
+Visible focus indicators.
+
+Accessible status messages.
+
+Meaningful image alternative text.
+
+Sufficient color contrast.
+
+Respect for prefers-reduced-motion.
+
+Target WCAG 2.2 AA for the core user interface where practical.
+
+Do not use color alone to communicate errors or booking status.
+
+11. Interactions and Animations
+
+Make the application feel polished and interactive without sacrificing performance.
+
+Implement:
+
+Smooth anchor scrolling.
+
+Subtle hero content entrance animations.
+
+Service card hover and focus effects.
+
+Button hover, active, and loading states.
+
+Subtle reveal animations for page sections.
+
+Mobile navigation transitions.
+
+Form validation feedback.
+
+Toast notifications for meaningful actions.
+
+Loading skeletons where appropriate.
+
+Smooth dashboard navigation.
+
+Accessible dialogs and confirmation prompts for destructive actions.
+
+Animation must remain subtle, consistent, and professional.
+
+Do not animate every element unnecessarily.
+
+Avoid large animation bundles, excessive parallax, continuous decorative animations, and layout shifts.
+
+Respect reduced-motion preferences and ensure functionality remains available without animation.
+
+Every visible button, link, tab, dropdown, form, and menu must perform its advertised action.
+
+Do not use fake interactions that only change the appearance of the interface.
+
+12. Performance and Code Quality
+
+Optimize the website for speed, maintainability, and responsive rendering.
+
+Requirements:
+
+Use route-level code splitting where appropriate.
+
+Avoid unnecessary React re-renders.
+
+Avoid duplicate Supabase requests.
+
+Use pagination or bounded queries for growing datasets.
+
+Select only the required database columns.
+
+Add appropriate database indexes.
+
+Optimize image sizes and formats.
+
+Use lazy loading for below-the-fold images.
+
+Prioritize the main hero image when appropriate.
+
+Reserve image dimensions to reduce layout shifts.
+
+Avoid unnecessary dependencies.
+
+Avoid blocking the initial render with nonessential effects.
+
+Provide useful loading, empty, and error states.
+
+Clean up subscriptions and event listeners.
+
+Use reusable components and consistent project conventions.
+
+Aim for strong Lighthouse performance and accessibility scores, but do not fabricate benchmark results.
+
+Run available build, lint, type-check, and test commands before declaring the project complete.
+
+13. Suggested Project Structure
+
+Create a clear and maintainable directory structure similar to:
+
+cleanhome/
+├── public/
+│   ├── images/
+│   └── favicon.svg
+├── src/
+│   ├── app/
+│   │   ├── App.tsx
+│   │   ├── router.tsx
+│   │   └── providers.tsx
+│   ├── components/
+│   │   ├── common/
+│   │   ├── layout/
+│   │   ├── navigation/
+│   │   ├── services/
+│   │   ├── bookings/
+│   │   └── forms/
+│   ├── features/
+│   │   ├── auth/
+│   │   ├── dashboard/
+│   │   ├── services/
+│   │   ├── bookings/
+│   │   └── profile/
+│   ├── hooks/
+│   ├── lib/
+│   │   └── supabase.ts
+│   ├── pages/
+│   │   ├── LandingPage.tsx
+│   │   ├── LoginPage.tsx
+│   │   ├── RegisterPage.tsx
+│   │   ├── ForgotPasswordPage.tsx
+│   │   ├── ResetPasswordPage.tsx
+│   │   ├── DashboardPage.tsx
+│   │   ├── ServicesPage.tsx
+│   │   ├── BookingsPage.tsx
+│   │   ├── ProfilePage.tsx
+│   │   └── NotFoundPage.tsx
+│   ├── schemas/
+│   ├── types/
+│   ├── utils/
+│   ├── App.css
+│   └── main.tsx
+├── supabase/
+│   ├── migrations/
+│   ├── seed.sql
+│   └── README.md
+├── tests/
+├── .env.example
+├── .gitignore
+├── package.json
+├── README.md
+├── tsconfig.json
+├── vite.config.ts
+└── index.html
+
+This structure is a guide, not a reason to create unnecessary files. Adapt it when a simpler structure is more appropriate.
+
+Keep database access, validation, UI components, authentication state, and route protection separated logically.
+
+14. README.md Documentation Requirements
+
+Create a complete, professional README.md in Indonesian.
+
+The README must explain the actual implemented application, not merely describe the intended design.
+
+Include the following sections:
+
+Project title and overview.
+
+Background and purpose of CleanHome.
+
+Main features.
+
+Technology stack and its purpose.
+
+Architecture and project directory structure.
+
+Authentication and user journey.
+
+Database schema and relationships.
+
+Database security and RLS policies.
+
+Information disclosure prevention measures.
+
+Prerequisites and required software.
+
+Installation tutorial from scratch.
+
+Supabase project setup tutorial.
+
+Database migration and seed-data instructions.
+
+Environment variable configuration.
+
+Local development tutorial.
+
+Build, lint, type-check, and testing commands.
+
+User guide for visitors.
+
+User guide for registration and login.
+
+User guide for browsing services.
+
+User guide for creating and managing bookings.
+
+User guide for updating a profile and logging out.
+
+Troubleshooting common errors.
+
+Deployment instructions.
+
+Security limitations and production considerations.
+
+Future development opportunities.
+
+License, if one has actually been selected.
+
+Use actual commands that match the project's package scripts.
+
+Explain each setup step in beginner-friendly Indonesian.
+
+For Supabase, document how to:
+
+Create a project.
+
+Obtain the project URL and publishable key.
+
+Configure the local environment.
+
+Apply SQL migrations.
+
+Configure email confirmation and password recovery URLs.
+
+Run the application.
+
+Verify that authentication and database queries work.
+
+Never include real secrets, passwords, service-role keys, or private user data in the README.
+
+If a feature is not implemented, label it as planned or not yet available rather than documenting it as working.
+
+15. Implementation Workflow
+
+Work through the following phases in order.
+
+Phase 1 — Project Foundation
+
+Initialize the React, TypeScript, and Vite project.
+
+Configure Tailwind CSS v4.
+
+Configure routing, linting, and type checking.
+
+Establish the design tokens and base components.
+
+Phase 2 — Public Website
+
+Build the landing page.
+
+Implement responsive navigation.
+
+Build service sections and calls to action.
+
+Implement animations and interaction states.
+
+Phase 3 — Supabase and Security
+
+Configure the Supabase client.
+
+Create SQL migrations and database constraints.
+
+Implement RLS policies.
+
+Configure environment variables.
+
+Test database access boundaries.
+
+Phase 4 — Authentication
+
+Implement registration, login, logout, and password recovery.
+
+Handle email confirmation.
+
+Implement authentication state and protected routes.
+
+Test session handling.
+
+Phase 5 — Customer Dashboard
+
+Implement dashboard overview.
+
+Connect service listing to Supabase.
+
+Implement booking creation and history.
+
+Implement profile viewing and updates.
+
+Phase 6 — Quality Assurance
+
+Test all important interactions.
+
+Test authorization and information disclosure prevention.
+
+Verify responsive behavior.
+
+Run build, lint, type checks, and automated tests.
+
+Fix discovered issues.
+
+Phase 7 — Documentation
+
+Write the complete Indonesian README.md.
+
+Verify all commands and setup instructions.
+
+Document known limitations honestly.
+
+Do not skip security or testing to finish the UI faster.
+
+16. Definition of Done
+
+The project is complete only when the following conditions have been satisfied:
+
+A new project has been built from scratch.
+
+The landing page introduces CleanHome professionally.
+
+Navigation, service cards, and CTAs work.
+
+Registration and login use real Supabase Auth.
+
+Password recovery is implemented.
+
+Successful login leads to the customer dashboard.
+
+Protected routes handle unauthenticated users correctly.
+
+Services are loaded from Supabase.
+
+Customers can create and view their own bookings.
+
+Profile functionality works for supported fields.
+
+PostgreSQL migrations and RLS policies are included.
+
+Cross-customer data access is blocked and tested.
+
+Information disclosure protections are implemented and verified.
+
+Environment secrets are not exposed.
+
+Responsive behavior works on mobile, tablet, and desktop.
+
+Animations respect reduced-motion preferences.
+
+Loading, empty, success, and error states are implemented.
+
+The production build succeeds.
+
+Type checking, linting, and relevant tests pass.
+
+README.md contains accurate setup and usage instructions.
+
+At completion, provide a concise report containing:
+
+What has been implemented.
+
+The important files created.
+
+Database migrations and RLS policies created.
+
+Commands used to run and test the project.
+
+Tests actually passed or failed.
+
+Any remaining limitations.
+
+Exact steps the developer must perform manually in Supabase.
+
+Do not claim the project is fully secure or production-ready solely because these tasks have been attempted. Report verification results honestly.
+
+Final Instruction
+
+Begin by creating the project from scratch and inspecting the generated file structure.
+
+Implement real, maintainable code rather than returning only plans or isolated snippets. If a required external configuration is unavailable, such as Supabase credentials, implement the integration and document the exact setup steps without fabricating successful connections or test results.
+
+Prioritize a polished business-quality user experience, robust authorization, information disclosure prevention, responsiveness, performance, and complete Indonesian documentation.
+
+The final deliverable is a working CleanHome application with the flow:
+
+Public Landing Page → Register/Login → Customer Dashboard → Services → Booking Management → Profile
+
+Use Supabase as the actual authentication and database platform throughout the application.
